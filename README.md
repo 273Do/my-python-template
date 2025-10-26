@@ -21,15 +21,23 @@
 - **pandera**: データバリデーション
 - **matplotlib**: データ可視化
 
-## セットアップ
+## Git
 
-```bash
-# 依存関係のインストール
-uv sync
+このプロジェクトでは、コード品質を保つために **lefthook** を使用して Git hooks を管理しています。
 
-# テストの実行
-uv run pytest
-```
+### Git hooks
+
+`uv run lefthook install` を実行すると、以下の hooks が設定されます：
+
+- **pre-commit**: コミット前に ruff によるリントとフォーマットチェックを実行
+- **pre-push**: プッシュ前にテストを実行
+
+### Docker イメージ内の Git
+
+Docker イメージには以下のツールが含まれています：
+
+- **git**: バージョン管理システム
+- **openssh-client**: SSH 接続（プライベートリポジトリのクローン等に使用）
 
 ## Docker
 

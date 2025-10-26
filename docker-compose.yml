@@ -8,4 +8,6 @@ services:
     command: tail -f /dev/null
     volumes:
       - .:/app
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+      - ~/.gitconfig:/root/.gitconfig:ro
     restart: unless-stopped
